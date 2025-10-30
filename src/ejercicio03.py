@@ -28,7 +28,17 @@ def contar_digitos_pares_impares(numero: int) -> tuple[int, int]:
         - Si el número es 0, devolver (1, 0)
     """
     # TODO: Implementar la función
-    return (0, 0)
+    numero_absoluto = abs(numero)
+    numero_str = str(numero_absoluto)
+
+    cantidad_pares = 0
+    cantidad_impares = 0
+    for digito in numero_str:
+        if int(digito) in (0, 2, 4, 6, 8):
+            cantidad_pares += 1
+        elif int(digito) in (1, 3, 5, 7, 9):
+            cantidad_impares += 1
+    return (cantidad_pares, cantidad_impares)
 
 
 def extraer_digitos_pares(numero: int) -> str:
